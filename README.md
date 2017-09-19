@@ -15,9 +15,12 @@ Send POST request to `http://localhost:8080/api/send` in format:
 {
   "type": <message_type>,
   "to": <receiver_number>,
-  "payload": <data_for_message>
+  "payload": <data_for_message>,
+  "language": <message_language>
 }
 ```
+
+Available languages: `en`, `ru`.
 
 ## Message types:
 ### Notification

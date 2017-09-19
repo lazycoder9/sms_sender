@@ -34,4 +34,4 @@ payload: { code: <authoriation_code> }
 
 ### Login Notification
 type: 'logNotify'  
-payload: { time: <your_mesage>, device: <device_type>, location: <geolocation> }
+payload: { time: <auth_time>, device: <device_type>, location: <geo_location> }

@@ -5,16 +5,16 @@ dotenv.config();
 
 const client = twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN);
 
-export default (to, message) => {
-  return client.api.messages
-    .create({
-      body: message,
-      to: to,
-      from: process.env.SENDING_NUMBER
-    }).then((data) => {
-      console.log(data);
-    }).catch((err) => {
-      console.log('Something is wrong!');
-      console.log(err);
-    });
-}
+export default async (to, message) => {
+  try {
+    const result = await client.api.messages
+      .create({
+        body: message,
+        to,
+        from: process.env.SENDING_NUMBER,
+      });
+    return result;
+  } catch (err) {
+    return err;
+  }
+};

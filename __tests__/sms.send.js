@@ -1,17 +1,16 @@
 import mockery from 'mockery';
-import sinon from 'sinon';
+import { stub } from 'sinon';
 import send from '../src/send';
 
-const stub = sinon.stub;
 
-describe('Sending SMS', function(){
+describe('Sending SMS', () => {
   let msgCreateStub;
 
   beforeEach(() => {
     mockery.enable({
       useCleanCache: true,
       warnOnReplace: false,
-      warnOnUnregistered: false
+      warnOnUnregistered: false,
     });
 
     msgCreateStub = stub().returns(Promise.resolve({}));
@@ -23,21 +22,21 @@ describe('Sending SMS', function(){
             create: msgCreateStub,
           },
         },
-      }
+      };
     }
 
     mockery.registerMock('twilio', TwilioMock);
   });
 
-  it('should send sms message and return promise with result', function() {
-   var toNumber = '+15555555555';
-   var message = 'test message';
+  it('should send sms message and return promise with result', () => {
+    const toNumber = '+15555555555';
+    const message = 'test message';
 
-   /*return send(toNumber, message)
+    /* return send(toNumber, message)
     .then(() => {
-      // Need to mock 
+      // Need to mock
       expect(true).toBeTruthy();
-    });*/
+    }); */
 
     expect(true).toBeTruthy();
   });

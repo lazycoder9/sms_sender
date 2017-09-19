@@ -2,9 +2,10 @@
   "name": "sms-sender",
   "main": "server.js",
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "node dist/index.js",
     "build": "babel src --out-dir dist --source-maps inline",
-    "test": "jest"
+    "test": "jest",
+    "nodemon": "nodemon"
   },
   "dependencies": {
     "babel-cli": "*",
@@ -26,12 +27,15 @@
   "version": "1.0.0",
   "devDependencies": {
     "babel-eslint": "*",
+    "babel-watch": "^2.0.7",
+    "babel-polyfill": "*",
     "eslint": "*",
     "eslint-config-airbnb-base": "*",
     "eslint-plugin-flowtype": "*",
     "eslint-plugin-import": "*",
     "jest": "*",
     "mockery": "*",
+    "nodemon": "^1.12.1",
     "sinon": "*"
   },
   "author": "",

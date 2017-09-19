@@ -1,5 +1,5 @@
 export default class Info {
-  constructor({ to, language = 'en', payload: { message }}) {
+  constructor({ to, language = 'en', payload: { message } }) {
     this.to = to;
     this.language = language;
     this.message = message;
@@ -10,6 +10,6 @@ export default class Info {
   }
 
   parse() {
-    return { to: this.to, message: this.getMessage() }
+    return { to: this.to, message: this.getMessage() };
   }
 }

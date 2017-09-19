@@ -18,6 +18,9 @@
     "dotenv": "*",
     "express": "*",
     "body-parser": "*",
+    "i18next": "*",
+    "i18next-express-middleware": "*",
+    "i18next-node-fs-backend": "*",
     "twilio": "*"
   },
   "version": "1.0.0",

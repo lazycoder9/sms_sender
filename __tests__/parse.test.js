@@ -6,14 +6,14 @@ test('Notification SMS', () => {
     to: '+123 45 678 99 99',
     language: 'en',
     payload: {
-      message: 'This is notification'
-    }
-  }
+      message: 'This is notification',
+    },
+  };
 
   const expected = {
     to: '+123 45 678 99 99',
-    message: 'This is notification'
-  }
+    message: 'This is notification',
+  };
 
   expect(parser(requestBody)).toEqual(expected);
 });
@@ -24,14 +24,14 @@ test('Info SMS', () => {
     to: '+123 45 678 99 99',
     language: 'en',
     payload: {
-      message: 'This is info message'
-    }
-  }
+      message: 'This is info message',
+    },
+  };
 
   const expected = {
     to: '+123 45 678 99 99',
-    message: 'This is info message'
-  }
+    message: 'This is info message',
+  };
 
   expect(parser(requestBody)).toEqual(expected);
 });
@@ -42,14 +42,14 @@ test('Authorization Code SMS', () => {
     to: '+123 45 678 99 99',
     language: 'en',
     payload: {
-      code: 9999
-    }
-  }
+      code: 9999,
+    },
+  };
 
   const expected = {
     to: '+123 45 678 99 99',
-    message: 'Your authorization code: 9999'
-  }
+    message: 'Your authorization code: 9999',
+  };
 
   expect(parser(requestBody)).toEqual(expected);
 });
@@ -60,14 +60,14 @@ test('RU Authorization Code SMS', () => {
     to: '+123 45 678 99 99',
     language: 'en',
     payload: {
-      code: 9999
-    }
-  }
+      code: 9999,
+    },
+  };
 
   const expected = {
     to: '+123 45 678 99 99',
-    message: 'Ваш код авторизации: 9999'
-  }
+    message: 'Ваш код авторизации: 9999',
+  };
 
   expect(parser(requestBody)).toEqual(expected);
 });

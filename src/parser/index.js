@@ -3,9 +3,9 @@ import Info from './Info';
 import AuthCode from './AuthCode';
 
 const types = {
-  notification: (body) => new Notification(body),
-  info: (body) => new Info(body),
-  authCode: (body) => new AuthCode(body)
-}
+  notification: Notification,
+  info: Info,
+  authCode: AuthCode,
+};
 
-export default (body) => types[body.type](body).parse();
+export default body => new types[body.type](body).parse();

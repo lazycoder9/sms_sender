@@ -24,14 +24,35 @@ Send POST request to `http://localhost:8080/api/send` in format:
 type: 'notification'  
 payload: { event: <event_name>, time: <event_time> }
 
+Received message:
+```
+Notification:
+Event: <your_event_name>
+Time: <your_event_time>
+```
+
 ### Info
 type: 'info'  
 payload: { message: <your_mesage> }
+
+Receiver will get just your message
 
 ### Authorization Code
 type: 'authCode'  
 payload: { code: <authoriation_code> }
 
+Received message:
+```
+Your authorization code: <authorization_code>
+```
+
 ### Login Notification
 type: 'logNotify'  
 payload: { time: <auth_time>, device: <device_type>, location: <geo_location> }
+
+Received message:
+```
+We detected a login into your account from a new device on <auth_time>.
+Device: <device_type>
+Location: <geo_location>
+```

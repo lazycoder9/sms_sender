@@ -6,13 +6,14 @@ test('Notification SMS', () => {
     to: '+123 45 678 99 99',
     language: 'en',
     payload: {
-      message: 'This is notification',
+      event: 'Buy apples',
+      time: '12:00',
     },
   };
 
   const expected = {
     to: '+123 45 678 99 99',
-    message: 'This is notification',
+    message: 'Notification:\nEvent: Buy apples\nTime: 12:00',
   };
 
   expect(parser(requestBody)).toEqual(expected);
@@ -58,7 +59,7 @@ test('RU Authorization Code SMS', () => {
   const requestBody = {
     type: 'authCode',
     to: '+123 45 678 99 99',
-    language: 'en',
+    language: 'ru',
     payload: {
       code: 9999,
     },
@@ -67,6 +68,26 @@ test('RU Authorization Code SMS', () => {
   const expected = {
     to: '+123 45 678 99 99',
     message: 'Ваш код авторизации: 9999',
+  };
+
+  expect(parser(requestBody)).toEqual(expected);
+});
+
+test('Login Notification SMS', () => {
+  const requestBody = {
+    type: 'authCode',
+    to: '+123 45 678 99 99',
+    language: 'en',
+    payload: {
+      time: '12:00',
+      device: 'web',
+      location: 'Moscow, Russian Federation',
+    },
+  };
+
+  const expected = {
+    to: '+123 45 678 99 99',
+    message: 'We detected a login into your account from a new device on 12:00.\n Device: mobile\n Location: Moscow, Russian Federation',
   };
 
   expect(parser(requestBody)).toEqual(expected);
